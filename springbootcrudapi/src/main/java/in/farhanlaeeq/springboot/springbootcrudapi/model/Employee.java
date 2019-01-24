@@ -2,7 +2,12 @@ package in.farhanlaeeq.springboot.springbootcrudapi.model;
 
 import java.sql.Date;
 
+import javax.annotation.Generated;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -13,14 +18,17 @@ import javax.persistence.Table;
 @Table(name = "tbl_employee")
 public class Employee {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Integer id;
-	
+	@Column
 	private String name;
-	
+	@Column	
 	private String gender;
-	
+	@Column
 	private String department;
-	
+	@Column
 	private Date dob;
 
 	public Integer getId() {
